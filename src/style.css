@@ -1,0 +1,633 @@
+
+    /*  GALVENAIS STILS  */
+    :root {
+      --bg-color: rgb(246, 223, 194);
+      --card-color: rgb(243, 196, 136);
+      --text-color: white;
+      --hover-color: white;
+      --hover-text: rgb(243, 196, 136);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: all 0.5s ease;
+    }
+
+    /* HEADER UN NAV */
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background-color: var(--card-color);
+      color: var(--text-color);
+      padding: 20px 10px 30px;
+      border-bottom-left-radius: 65px;
+      border-bottom-right-radius: 65px;
+      transition: all 0.5s ease;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 10px;
+      position: static;
+    }
+
+    nav a {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--hover-color);
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.4s ease;
+    }
+
+
+    nav a::before {
+      content: "";
+      position: absolute;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--hover-color);
+      transition: all 0.4s ease;
+      z-index: 0;
+      border-radius: 8px;
+    }
+
+    nav a:hover::before {
+      left: 0;
+    }
+
+    nav a span {
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s ease;
+    }
+
+    nav a:hover span {
+      color: var(--hover-text);
+    }
+    /* dark mode */
+  
+    .dark-toggle {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      background: var(--hover-color);
+      color: var(--hover-text);
+      border: none;
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    body.dark-mode .contact-form input,
+    body.dark-mode .contact-form textarea {
+      background-color: #555;
+      color: #fff;
+
+      
+    }
+
+    body.dark-mode {
+      --bg-color: #2e2e2e;
+      --card-color: #3c3c3c;
+      --text-color: #f4f4f4;
+      --hover-color: #f4f4f4;
+      --hover-text: #3c3c3c;
+    }
+    main {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 40px 0;
+    }
+
+    /* KARTIŅAS  */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.cards {
+  background: linear-gradient(135deg, #f3c488, #ca740a);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+}
+
+
+.cards img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.cards button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff, #f8f5e9);
+  color: var(--hover-text);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+
+.cards:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: float 0.6s ease;
+  background: linear-gradient(135deg, #ebfa88, #b17f3a); /* плавный градиент при hover */
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(-10px); }
+}
+
+
+.cards:hover img {
+  transform: scale(1.1); 
+  filter: brightness(1.15); 
+}
+
+.cards button:hover {
+  background: linear-gradient(135deg, #ecdb79, #ef9220); /* hover gradient */
+  transform: scale(1.05);
+}
+
+    /*Citas sekcijas */
+    .divider {
+      border: none;
+      border-top: 10px solid rgba(243, 196, 136, 0.6);
+      margin: 40px auto;
+      width: 80%;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+    }
+
+    .info-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 400px;
+      margin-top: 50px;
+      padding: 0 50px;
+      gap: 200px;
+    }
+
+    .circle-box {
+      width: 300px;
+      height: 300px;
+      border-radius: 20%;
+      background-color: var(--card-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.5s ease;
+    }
+
+    .image-box {
+      flex: 1;
+      height: 100%;
+      background-image: url('https://www.visitjurmala.lv//images/catalog/208f0cd7c8c771f2b29a68b9b425a6a2/000/000/074/s1_7454.jpg');
+      background-size: cover;
+      background-position: center;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+
+    /* KONTAKTU SEKCIJA */
+    .contact-section {
+      background-color: var(--card-color);
+      color: var(--text-color);
+      padding: 60px 20px;
+      text-align: center;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      margin-top: 50px;
+      transition: all 0.5s ease;
+    }
+
+    .contact-section h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 60px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      font-size: 18px;
+      text-align: left;
+      max-width: 300px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 320px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.5s ease;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      color: var(--hover-text);
+      background-color: white;
+    }
+
+   
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #aaa;
+    }
+
+    .contact-form button {
+      background-color: var(--hover-color);
+      color: var(--hover-text);
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: rgb(248, 245, 233);
+      transform: scale(1.05);
+    }
+
+    /*FOOTER  */
+    .footer {
+      background-color: var(--card-color);
+      color: var(--text-color);
+      padding: 25px 10px 10px;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      margin-top: 20px;
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+
+
+    
+
+    /* MEDIA QUERIES */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 5px;
+      }
+
+      .info-section {
+        flex-direction: column;
+        gap: 40px;
+        height: auto;
+        padding: 20px;
+      }
+
+      .image-box {
+        width: 100%;
+        border-radius: 30px;
+        height: 250px;
+      }
+
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .contact-form {
+        width: 90%;
+      }
+
+      .contact-info {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .cards-container {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+
+
+/* DROPDOWN  */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown > a {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s;
+}
+
+
+.dropdown > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hover-color);
+  transition: all 0.4s ease;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.dropdown:hover > a::before {
+  left: 0;
+}
+
+.dropdown > a span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s;
+}
+
+.dropdown:hover > a span {
+  color: var(--hover-text);
+}
+
+
+.dropdown-content {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  min-width: 160px;
+  background-color: var(--card-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  color: var(--hover-color);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.dropdown-content a span {
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown-content a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hover-color);
+  transition: all 0.4s ease;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.dropdown-content a:hover::before {
+  left: 0;
+}
+
+.dropdown-content a:hover span {
+  color: var(--hover-text);
+}
+
+
+/* MODAL STYLE */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.6);
+      }
+
+      .modal-content {
+        background-color: var(--card-color);
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 15px;
+        width: 60%;
+        color: var(--text-color);
+        text-align: center;
+        position: relative;
+      }
+
+      .close {
+        color: var(--text-color);
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: var(--hover-color);
+      }
+
+
+      
+
+
+      /* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--hover-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/*NAV FIX*/
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 250px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 20px;
+    gap: 20px;
+    background-color: var(--card-color);
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    z-index: 15;
+  }
+
+  .nav-container.active {
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .dark-toggle {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
+    z-index: 50; 
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  header .dark-toggle {
+    top: auto;
+  }
+}
+
+
+
