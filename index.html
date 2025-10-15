@@ -616,6 +616,23 @@
   }
 }
 
+@media (max-width: 768px) {
+  .dark-toggle {
+    position: fixed; /* фиксируем отдельно от хедера */
+    bottom: 20px; /* переносим вниз */
+    right: 20px; /* в правый нижний угол */
+    z-index: 50; /* поверх всех элементов */
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  header .dark-toggle {
+    top: auto; /* убираем верхнее позиционирование */
+  }
+}
+
+
+
   </style>
 </head>
 
@@ -629,10 +646,10 @@
     <div class="dropdown">
       <a href="#"><span>Services ▾</span></a>
       <div class="dropdown-content">
-        <a href="#">Catering</a>
-        <a href="#">Private Events</a>
-        <a href="#">Online Orders</a>
-      </div>
+      <a href="#"><span>Catering</span></a>
+      <a href="#"><span>Private Events</span></a>
+      <a href="#"><span>Online Orders</span></a>
+  </div>
     </div>
     <a href="#Contact"><span>Contact</span></a>
   </div>
@@ -666,11 +683,11 @@
         <img src="https://www.toptravelsights.com/wp-content/uploads/2020/08/Estonian-Mulgipuder-with-Barley-Sausages-1024x576.jpg" alt="Product 3">
         <h2>Igaunija</h2>
         <p>Mulgipuder – īsts igauņu klasikas ēdiens...</p>
-        <button onclick="window.location.href='https://www.youtube.com/watch?v=C-u5WLJ9Yk4';">Vairāk</button>
+        <button>Vairāk</button>
       </div>
     </div>
   </main>
-
+  
         <!-- ======== MODAL ======== -->
       <div id="modal" class="modal">
         <div class="modal-content">
